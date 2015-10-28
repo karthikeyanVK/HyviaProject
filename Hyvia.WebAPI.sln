@@ -1,0 +1,52 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hyvia.SQL.EF", "Hyvia.SQL.EF\Hyvia.SQL.EF.csproj", "{F07EC37D-EEC4-4798-9AE2-37A6469B9BF6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hyvia.API", "Hyvia.API\Hyvia.API.csproj", "{F3CFA8CE-19C1-4618-8EB3-D208543C71B3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hyvia.Mongo.DataAccess", "Hyvia.Mongo.DataAccess\Hyvia.Mongo.DataAccess.csproj", "{99D4EB0D-5332-40F7-B305-08AE23B8B2C6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hyvia.Data.Model", "Hyvia.Data.Model\Hyvia.Data.Model.csproj", "{2713B40D-588D-4AED-BA73-4376DF7A2897}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hyvia.API.Command", "Hyvia.API.Command\Hyvia.API.Command.csproj", "{88ACE157-8203-4311-AAB3-55FEEF7E4DE6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hyvia.API.Query", "Hyvia.API.Query\Hyvia.API.Query.csproj", "{08D3A2C9-C516-409D-A093-D7E2D7692564}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F07EC37D-EEC4-4798-9AE2-37A6469B9BF6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F07EC37D-EEC4-4798-9AE2-37A6469B9BF6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F07EC37D-EEC4-4798-9AE2-37A6469B9BF6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F07EC37D-EEC4-4798-9AE2-37A6469B9BF6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F3CFA8CE-19C1-4618-8EB3-D208543C71B3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F3CFA8CE-19C1-4618-8EB3-D208543C71B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F3CFA8CE-19C1-4618-8EB3-D208543C71B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F3CFA8CE-19C1-4618-8EB3-D208543C71B3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{99D4EB0D-5332-40F7-B305-08AE23B8B2C6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{99D4EB0D-5332-40F7-B305-08AE23B8B2C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{99D4EB0D-5332-40F7-B305-08AE23B8B2C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{99D4EB0D-5332-40F7-B305-08AE23B8B2C6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2713B40D-588D-4AED-BA73-4376DF7A2897}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2713B40D-588D-4AED-BA73-4376DF7A2897}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2713B40D-588D-4AED-BA73-4376DF7A2897}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2713B40D-588D-4AED-BA73-4376DF7A2897}.Release|Any CPU.Build.0 = Release|Any CPU
+		{88ACE157-8203-4311-AAB3-55FEEF7E4DE6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{88ACE157-8203-4311-AAB3-55FEEF7E4DE6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{88ACE157-8203-4311-AAB3-55FEEF7E4DE6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{88ACE157-8203-4311-AAB3-55FEEF7E4DE6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{08D3A2C9-C516-409D-A093-D7E2D7692564}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{08D3A2C9-C516-409D-A093-D7E2D7692564}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{08D3A2C9-C516-409D-A093-D7E2D7692564}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{08D3A2C9-C516-409D-A093-D7E2D7692564}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
