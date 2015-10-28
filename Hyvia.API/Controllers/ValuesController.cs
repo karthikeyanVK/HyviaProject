@@ -9,7 +9,7 @@ using Hyvia.Mongo.DataAccess;
 namespace Hyvia.API
 {
     //[Authorize]
-    public class ValuesController : ApiController
+  /*  public class ValuesController : ApiController
     {
         // GET api/values
         public string[] Get()
@@ -37,5 +37,5 @@ namespace Hyvia.API
         public void Delete(int id)
         {
         }
-    }
+    }*/
 }

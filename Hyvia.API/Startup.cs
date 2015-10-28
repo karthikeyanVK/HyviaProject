@@ -17,7 +17,7 @@ namespace Hyvia.API
             ConfigureAuth(app);
             HttpConfiguration config = new HttpConfiguration();
             config
-                .EnableSwagger(c => c.SingleApiVersion("v1", "A title for your API"))
+                .EnableSwagger(c => c.SingleApiVersion("v1", "Hyvia Project API Documentation"))
                 .EnableSwaggerUi();
             WebApiConfig.Register(config);
             //enable CORS
