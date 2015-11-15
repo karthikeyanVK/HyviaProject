@@ -63,7 +63,7 @@ namespace Hyvia.API.Command
                 };
                 searchDataList.Add(searchData);
             }
-           /*if (!string.IsNullOrEmpty(productQuery.ProductTypeId))
+           if (!string.IsNullOrEmpty(productQuery.ProductTypeId))
           {
               searchData = new SearchData
               {
@@ -71,8 +71,8 @@ namespace Hyvia.API.Command
                   SearchValue = new List<string> {productQuery.ProductTypeId}
               };
               searchDataList.Add(searchData);
-          }*/
-            var result = await AccessDb.GetListOfWithEntity<Product>(searchDataList, MongoTables.ProductTableName);
+          }
+            var result = await AccessDb.GetListWithFilter<Product>(searchDataList, MongoTables.ProductTableName);
 
             return result;
         }

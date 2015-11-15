@@ -50,7 +50,7 @@ namespace Hyvia.Mongo.DataAccess
 
             return await collection.Find(_ => true).ToListAsync();
         }
-        public static async Task<IList<T>> GetListOfWithEntity<T>(IList<SearchData> searchDataList, string fromCollection)
+        public static async Task<IList<T>> GetListWithFilter<T>(IList<SearchData> searchDataList, string fromCollection)
         {
             var collection = Db().GetCollection<T>(fromCollection);
             FilterDefinition<T> filter = new BsonDocument();
@@ -60,9 +60,12 @@ namespace Hyvia.Mongo.DataAccess
 
                 foreach (var searchData in searchDataList)
                 {
-                    string filterQuery = string.Format("/^{0}/i", searchData.SearchValue.First());
+                    var searchValue = searchData.SearchValue.First().Trim();
+                    if (string.IsNullOrEmpty(searchValue))
+                        continue;
+                    string filterQuery = string.Format("/{0}/i", searchValue);
                     filter =
-                    Builders<T>.Filter.Regex(searchData.SearchField, filterQuery);
+                    Builders<T>.Filter.Regex(searchData.SearchField, filterQuery) & filter;
                     //  filter = Builders<BsonDocument>.Filter.ElemMatch
                 }
             }
