@@ -5,9 +5,9 @@ namespace Hyvia.Data.Model
 {
     public class Product
     {
-        public Guid ProductTypeId { get; set; }
+        public string ProductTypeId { get; set; }
         public string ProductName { get; set; }
-        public Guid ShopId { get; set; }
-        public Guid ProductId { get; set; }
+        public string ShopId { get; set; }
+        public string ProductId { get; set; }
     }
 }

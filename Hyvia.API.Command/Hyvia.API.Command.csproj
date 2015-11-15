@@ -45,6 +45,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Mappers\EditEntityMapper .cs" />
+    <Compile Include="Mappers\IMapper.cs" />
+    <Compile Include="Mappers\IModelEntityMapper .cs" />
     <Compile Include="Product\ProductCommand.cs" />
     <Compile Include="Product\ProductRepository.cs" />
     <Compile Include="Product\ProductTypeCommand.cs" />

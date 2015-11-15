@@ -22,9 +22,9 @@ namespace Hyvia.Mongo.DataAccess
             return _database;
         }
 
-        public static async Task<bool> Insert(BsonDocument document, string collectionName)
+        public static async Task<bool> Insert<T>(T document, string collectionName) 
         {
-            var collection = Db().GetCollection<BsonDocument>(collectionName);
+            var collection = Db().GetCollection<T>(collectionName);
             await collection.InsertOneAsync(document);
 
             return true;
@@ -44,23 +44,32 @@ namespace Hyvia.Mongo.DataAccess
             return await collection.Find(filter).ToListAsync();
             
         }
-        public static async Task<IList> GetListOf<TDocument>(IList<SearchData> searchDataList, string fromCollection) where TDocument : BsonDocument
+        public static async Task<IList<T>> GetListOf<T>( string fromCollection)
         {
-            var collection = Db().GetCollection<BsonDocument>(fromCollection);
-            FilterDefinition<BsonDocument> filter = new BsonDocument();
+            var collection = Db().GetCollection<T>(fromCollection);
+
+            return await collection.Find(_ => true).ToListAsync();
+        }
+        public static async Task<IList<T>> GetListOfWithEntity<T>(IList<SearchData> searchDataList, string fromCollection)
+        {
+            var collection = Db().GetCollection<T>(fromCollection);
+            FilterDefinition<T> filter = new BsonDocument();
             
             if (searchDataList != null && searchDataList.Count > 0)
             {
-                
+
                 foreach (var searchData in searchDataList)
                 {
-                    string filterQuery = string.Format("/^{0}/", searchData.SearchField);
-                    filter = Builders<BsonDocument>
-                        .Filter.(filterQuery, searchData.SearchValue.First());
+                    string filterQuery = string.Format("/^{0}/i", searchData.SearchValue.First());
+                    filter =
+                    Builders<T>.Filter.Regex(searchData.SearchField, filterQuery);
+                    //  filter = Builders<BsonDocument>.Filter.ElemMatch
                 }
             }
-             
-            return await collection.Find(filter).ToListAsync();
+            
+            var result = await collection.Find(filter).ToListAsync();
+            //var result = await collection.Find(_ => true).ToListAsync();
+            return result;
         }
     }
 }

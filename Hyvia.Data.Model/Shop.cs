@@ -4,7 +4,7 @@ namespace Hyvia.Data.Model
 {
     public class Shop
     {
-        public Guid ShopId { get; set; }
+        public string ShopId { get; set; }
         public string EmailAddress { get; set; }
         public string ShopName { get; set; }
         public string Pincode { get; set; }

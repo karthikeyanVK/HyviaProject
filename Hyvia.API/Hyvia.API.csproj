@@ -206,6 +206,7 @@
     <Compile Include="Controllers\ProductsController.cs" />
     <Compile Include="Controllers\ShopController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
+    <Compile Include="Filters\CacheClientAttribute.cs" />
     <Compile Include="Models\AccountBindingModels.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -272,6 +273,10 @@
     <ProjectReference Include="..\Hyvia.API.Query\Hyvia.API.Query.csproj">
       <Project>{08D3A2C9-C516-409D-A093-D7E2D7692564}</Project>
       <Name>Hyvia.API.Query</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Hyvia.Data.Model\Hyvia.Data.Model.csproj">
+      <Project>{2713b40d-588d-4aed-ba73-4376df7a2897}</Project>
+      <Name>Hyvia.Data.Model</Name>
     </ProjectReference>
     <ProjectReference Include="..\Hyvia.Mongo.DataAccess\Hyvia.Mongo.DataAccess.csproj">
       <Project>{99d4eb0d-5332-40f7-b305-08ae23b8b2c6}</Project>

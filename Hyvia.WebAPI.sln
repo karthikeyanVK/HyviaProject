@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.31101.0
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hyvia.SQL.EF", "Hyvia.SQL.EF\Hyvia.SQL.EF.csproj", "{F07EC37D-EEC4-4798-9AE2-37A6469B9BF6}"
 EndProject
@@ -14,6 +14,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hyvia.API.Command", "Hyvia.API.Command\Hyvia.API.Command.csproj", "{88ACE157-8203-4311-AAB3-55FEEF7E4DE6}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hyvia.API.Query", "Hyvia.API.Query\Hyvia.API.Query.csproj", "{08D3A2C9-C516-409D-A093-D7E2D7692564}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hyvia.Repositories", "Hyvia.Repositories\Hyvia.Repositories.csproj", "{2B6B17F0-D234-4C0D-986D-9A5E0D2A4AB9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{08D3A2C9-C516-409D-A093-D7E2D7692564}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{08D3A2C9-C516-409D-A093-D7E2D7692564}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{08D3A2C9-C516-409D-A093-D7E2D7692564}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2B6B17F0-D234-4C0D-986D-9A5E0D2A4AB9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2B6B17F0-D234-4C0D-986D-9A5E0D2A4AB9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2B6B17F0-D234-4C0D-986D-9A5E0D2A4AB9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2B6B17F0-D234-4C0D-986D-9A5E0D2A4AB9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

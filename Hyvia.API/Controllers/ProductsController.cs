@@ -1,4 +1,4 @@
-﻿ 
+﻿
 using System.Collections;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -6,6 +6,8 @@ using System.Web.Http;
 using Hyvia.API.Command;
 using Hyvia.API.Query;
 using MongoDB.Bson;
+using Hyvia.Data.Model;
+using Cads.VelVenti.Api.Filters;
 
 namespace Hyvia.API
 {
@@ -20,11 +22,12 @@ namespace Hyvia.API
         }
 
         // GET api/products/5
-        public async Task<IList> Get([FromUri]ProductQuery productQuery)
+        [CacheClient]
+        public async Task<IList<Product>> Get([FromUri]ProductQuery productQuery)
         {
             var relayResult = await _productRepository.GetProduct(productQuery);
 
-            return new[] {relayResult.ToJson()}; 
+            return relayResult; 
         }
 
         // POST api/values
@@ -46,10 +49,11 @@ namespace Hyvia.API
         }
 
         [Route("types")]
-        public async Task<IList> GetProductTypes(string productName)
+        [CacheClient]
+        public async Task<IList<ProductType>> GetProductTypes(string productName)
         {
             var relayResult = await _productRepository.GetProductTypes(productName);
-            return new[] { relayResult.ToJson() };
+            return relayResult;
         }
 
         [Route("types")]
