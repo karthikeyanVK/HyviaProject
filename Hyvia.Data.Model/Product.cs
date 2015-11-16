@@ -1,5 +1,4 @@
-﻿using System;
- 
+﻿
 
 namespace Hyvia.Data.Model
 {

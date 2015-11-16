@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Hyvia.Data.Model
+﻿namespace Hyvia.Data.Model
 {
     public class ProductType
     {
