@@ -38,29 +38,38 @@ namespace Hyvia.API.Command
             }
             return await AccessDb.GetListOf<BsonDocument>(searchData, MongoTables.ShopTableName);
         }
-        public async Task<IList> GetShopsByProduct(string productId)
+        public async Task<IList<Shop>> GetShopsByProduct(string productId)
         {
+            ProductRepository productRepository = new ProductRepository();
             IList<SearchData> searchDataList = new List<SearchData>();
             SearchData searchData = null;
             if (!string.IsNullOrEmpty(productId))
             {
                 searchData = new SearchData
                 {
-                    SearchField = "productId",
+                    SearchField = "ProductId",
                     SearchValue = new List<string> { productId }
                 };
 
                 searchDataList.Add(searchData);
             }
-            var products = await AccessDb.GetListWithFilter<Product>(searchDataList, MongoTables.ProductTableName);
+            var products = await productRepository.GetProduct(productId);
             var shops = await AccessDb.GetListOf<Shop>(MongoTables.ShopTableName);
 
-            var shopDetails = from shop in shops
-                              join product in products on shop.ShopId equals productId into shopDetail
-                              select shop;
+            var shopDetails = from shop in shops 
+                              join product in products on shop.ShopId equals product.ShopId 
+                              select new Shop {
+                                  ShopId = shop.ShopId,
+                                  Address = shop.Address,
+                                  EmailAddress = shop.EmailAddress,
+                                  Latitude = shop.Latitude,
+                                  Longitude = shop.Longitude,
+                                  Pincode = shop.Pincode,
+                                  ShopName = shop.ShopName
+                              };
 
 
-            return shopDetails.ToList<Shop>();
+            return shopDetails.ToList();
 
         }
         public async Task<bool> Insertshop(ShopCommand shopCommand)
