@@ -29,7 +29,18 @@ namespace Hyvia.API
 
             return relayResult; 
         }
-
+        /// <summary>
+        /// Return all shops
+        /// </summary>
+        /// <returns></returns>
+        [Route("All")]
+        [HttpGet]
+        [CacheClient]
+        public async Task<IList<Product>> GetAllProducts()
+        {
+            var result = await _productRepository.GetAllProducts();
+            return result;
+        }
         // POST api/values
         public async Task<bool> Post(ProductCommand productCommand)
         {

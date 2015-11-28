@@ -49,6 +49,11 @@ namespace Hyvia.API.Command
             await AccessDb.Insert(shop, MongoTables.ProductTypeTableName);
             return true;
         }
+        public async Task<IList<Product>> GetAllProducts()
+        {
+
+            return await AccessDb.GetListOf<Product>(MongoTables.ProductTableName);
+        }
         public async Task<IList<Product>> GetProduct(string productId)
         {
             IList<SearchData> searchDataList = new List<SearchData>();

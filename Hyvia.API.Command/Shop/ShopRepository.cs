@@ -38,6 +38,11 @@ namespace Hyvia.API.Command
             }
             return await AccessDb.GetListOf<BsonDocument>(searchData, MongoTables.ShopTableName);
         }
+        public async Task<IList<Shop>> GetAllShops()
+        {
+            
+            return await AccessDb.GetListOf<Shop>(MongoTables.ShopTableName);
+        }
         public async Task<IList<Shop>> GetShopsByProduct(string productId)
         {
             ProductRepository productRepository = new ProductRepository();
